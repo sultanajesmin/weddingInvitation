@@ -1,0 +1,596 @@
+/* =====================================================
+   FULL SCREEN WEDDING ENVELOPE
+===================================================== */
+
+
+.envelope-intro {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  height: 100dvh;
+
+  z-index: 99999;
+
+  overflow: hidden;
+
+  background: #f3dfbd;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =====================================================
+   FULL SCREEN ENVELOPE
+===================================================== */
+
+.fullscreen-envelope {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f1ddb9 0%,
+      #f7e7ca 50%,
+      #f1ddb9 100%
+    );
+
+  perspective: 1400px;
+}
+
+
+/* =====================================================
+   INVITATION UNDERNEATH
+===================================================== */
+
+.invitation-paper {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf1,
+      #f6ead6
+    );
+
+  color: #6d4b27;
+
+  padding: 40px;
+}
+
+
+.invitation-monogram {
+  font-family: Georgia, serif;
+
+  font-size: 70px;
+
+  color: #9a6a25;
+
+  margin-bottom: 25px;
+}
+
+
+.invitation-small {
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 25px;
+}
+
+
+.invitation-paper h1 {
+  margin: 0;
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(45px, 13vw, 80px);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+}
+
+
+.invitation-paper h1 span {
+  display: block;
+
+  font-size: 28px;
+
+  margin: 10px 0;
+
+  font-style: italic;
+}
+
+
+.invitation-date {
+  margin-top: 30px;
+
+  font-size: 13px;
+
+  letter-spacing: 5px;
+
+  color: #8a622d;
+}
+
+
+/* =====================================================
+   LEFT FOLD
+===================================================== */
+
+.envelope-left {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 50%;
+  height: 100%;
+
+  z-index: 10;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f1ddb8,
+      #f7e7ca
+    );
+
+  box-shadow:
+    8px 0 25px rgba(90, 60, 25, 0.08);
+
+  transform-origin: left center;
+
+  transition:
+    transform 1.35s
+    cubic-bezier(.65, 0, .35, 1);
+}
+
+
+/* =====================================================
+   RIGHT FOLD
+===================================================== */
+
+.envelope-right {
+  position: absolute;
+
+  right: 0;
+  top: 0;
+
+  width: 50%;
+  height: 100%;
+
+  z-index: 10;
+
+  background:
+    linear-gradient(
+      270deg,
+      #f1ddb8,
+      #f7e7ca
+    );
+
+  box-shadow:
+    -8px 0 25px rgba(90, 60, 25, 0.08);
+
+  transform-origin: right center;
+
+  transition:
+    transform 1.35s
+    cubic-bezier(.65, 0, .35, 1);
+}
+
+
+/* =====================================================
+   BOTANICAL DECORATION
+===================================================== */
+
+.botanical {
+  position: absolute;
+
+  color: #c69a54;
+
+  opacity: 0.6;
+
+  font-family: Georgia, serif;
+
+  font-size: 50px;
+
+  line-height: 1.2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.botanical-left {
+  left: 12px;
+  top: 30px;
+}
+
+
+.botanical-right {
+  right: 12px;
+  bottom: 30px;
+
+  transform: rotate(180deg);
+}
+
+
+.botanical span:nth-child(2) {
+  margin-left: 30px;
+}
+
+
+.botanical span:nth-child(3) {
+  margin-left: 5px;
+}
+
+
+.botanical span:nth-child(4) {
+  margin-left: 35px;
+}
+
+
+/* =====================================================
+   GOLD SEAL
+===================================================== */
+
+.golden-seal {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  width: clamp(105px, 27vw, 155px);
+
+  aspect-ratio: 1;
+
+  z-index: 30;
+
+  border: none;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #f4d78b 0%,
+      #c99a3d 35%,
+      #8e641e 75%,
+      #6b4814 100%
+    );
+
+  box-shadow:
+
+    inset 0 3px 4px
+      rgba(255,255,255,0.65),
+
+    inset 0 -7px 10px
+      rgba(80,45,5,0.35),
+
+    0 8px 20px
+      rgba(70,45,10,0.3);
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.5s ease;
+}
+
+.golden-seal {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  overflow: visible;
+}
+
+.golden-seal::before,
+.golden-seal::after {
+  content: none;
+}
+
+.seal-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+
+/* outer seal border */
+
+.golden-seal::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 9px;
+
+  border-radius: 50%;
+
+  border: 2px solid
+    rgba(255, 235, 170, 0.65);
+
+  box-shadow:
+
+    inset 0 0 0 3px
+      rgba(92,58,12,0.2);
+}
+
+
+/* inner seal */
+
+.golden-seal::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 20px;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(255,235,170,0.45);
+}
+
+
+.seal-inner {
+
+  position: relative;
+
+  z-index: 2;
+
+  color: #fff1c4;
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(25px, 7vw, 38px);
+
+  font-weight: bold;
+
+  text-shadow:
+    0 1px 1px rgba(70,40,5,0.4);
+}
+
+
+/* hover */
+
+.fullscreen-envelope:hover
+.golden-seal {
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.06);
+}
+
+
+/* =====================================================
+   TAP TEXT
+===================================================== */
+
+.tap-to-open {
+
+  position: absolute;
+
+  z-index: 40;
+
+  left: 50%;
+
+  bottom: 8%;
+
+  transform: translateX(-50%);
+
+  color: #80602d;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  font-weight: 500;
+
+  animation:
+    tapPulse 2s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+
+@keyframes tapPulse {
+
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+}
+
+
+/* =====================================================
+   OPENING ANIMATION
+===================================================== */
+
+.envelope-intro.opening
+.envelope-left {
+
+  transform:
+    translateX(-105%);
+}
+
+
+.envelope-intro.opening
+.envelope-right {
+
+  transform:
+    translateX(105%);
+}
+
+
+.envelope-intro.opening
+.golden-seal {
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.4);
+
+  opacity: 0;
+}
+
+
+/* invitation becomes visible */
+
+.envelope-intro.opening
+.invitation-paper {
+
+  animation:
+    invitationReveal 1.4s
+    cubic-bezier(.22,.61,.36,1)
+    forwards;
+}
+
+
+@keyframes invitationReveal {
+
+  0% {
+    transform: scale(0.96);
+    opacity: 0.2;
+  }
+
+  60% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+}
+
+
+/* entire intro disappears */
+
+.envelope-intro.opening {
+
+  animation:
+    introFade 0.8s
+    ease 1.35s
+    forwards;
+}
+
+
+@keyframes introFade {
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .invitation-monogram {
+    font-size: 55px;
+  }
+
+  .invitation-paper h1 {
+    font-size: 48px;
+  }
+
+  .golden-seal {
+    width: 120px;
+  }
+
+  .tap-to-open {
+    bottom: 6%;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+  }
+
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 601px) {
+
+  .fullscreen-envelope {
+
+    width: 100vw;
+    height: 100vh;
+
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .envelope-left,
+  .envelope-right,
+  .golden-seal,
+  .envelope-intro,
+  .invitation-paper {
+
+    transition: none !important;
+
+    animation: none !important;
+  }
+
+}
