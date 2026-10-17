@@ -3,7 +3,7 @@ export const MAP_URL = "https://maps.app.goo.gl/1pAsTyQ4p1kAAm1o8";
 
 // Replace these demo image URLs with your own photos later.
 export const DEMO_PHOTOS = {
-  story: "/images/DSC09654.JPG",
+  story: "/images/DSC09654.webp",
 
   gallery: [
     "https://images.unsplash.com/photo-1720944517997-dbba56f97ad6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
